@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorem Ipsum</title>
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- font : Yeseva One -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Yeseva+One&display=swap" rel="stylesheet">
+    <!-- ----------------- -->
+
+    <script src="https://kit.fontawesome.com/8e198f5d67.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="contactBar">
+        <div id="mailSection">
+            <img src="img/icons8-@.svg" alt="mail-icon">
+            <p style="font-size: 14px"><b>loremipsum@gmail.com</b></p>
+        </div>
+        <div id="socialMediaNavs">
+            <img class="socialMediaNavLogos" id="twitterLogo" src="img/icons8-twitter-bird.svg" alt="twitter-icon" onclick="goToTwitterPage()">
+            <img class="socialMediaNavLogos" id="instagramLogo" src="img/icons8-instagram.svg" alt="instagram-icon" onclick="goToInstagramPage()">
+        </div>
+    </div>
+
+    <div id="headerBar">
+        <div class="nav-toggle clickable" onclick="toggleNav()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div id="logo" onclick="reloadPage()">
+            <img id="websiteLogo" src="./img/logo-placeholder.svg" alt="website-logo">
+        </div>
+        <div id="navs">
+            <div class="close-button clickable" onclick="toggleNav()">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <a class="strongtexts clickable" href=""><i class="fa-solid fa-book"></i>Tüm Yazılar</a>
+            <a class="strongtexts clickable" href=""><i class="fa-solid fa-music"></i>Müzik</a>
+            <a class="strongtexts clickable" href=""><i class="fa-regular fa-futbol"></i>Spor</a>
+            <a class="strongtexts clickable" href=""><i class="fa-regular fa-film"></i>Sinema</a>
+            <a class="strongtexts clickable" href=""><i class="fa-solid fa-pen-nib"></i>Kültür</a>
+            <a class="strongtexts clickable" href=""><i class="fa-solid fa-gamepad"></i>Oyun</a>
+        </div>
+    </div>
+
+    <hr class="hr">
+
+    <div id="main">
+        <h1 class="strongtexts" style="text-align: center">Merhabalar!</h1>
+        <p style="text-align: center; "><em><span id="magZeppelinText">Blog Ipsum</span>'a hoşgeldiniz! Merak ettiğiniz spesifik bir başlık var mıdır?</em></p>
+        <div id="searchDiv">
+            <input type="text" placeholder="Yazı arayın...">
+            <i id="searchBtn" class="fa-solid fa-magnifying-glass clickable"></i>
+        </div>
+    </div>
+</body>
+
+<footer>
+    <p>Footer section</p>
+</footer>
+
+<script src="scripts/index.js"></script>
+
+</html>
