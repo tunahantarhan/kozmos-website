@@ -1,52 +1,52 @@
 console.log('Happy developing ✨')
 
-function reloadPage(){
-    location.reload();
-}
-function goToTwitterPage(){
-    window.open('https://x.com/jack?lang=en/', '_blank').focus();
-}
-function goToInstagramPage(){
-    window.open('https://www.instagram.com/zuck/', '_blank').focus();
-}
-function toggleNav(){
-    const navs = document.getElementById('navs');
-    const isMenuOpen = navs.classList.contains('active');
+/*
+const form = document.querySelector('form');
+const searchInput = document.getElementById('search');
+const denemeText = document.getElementById('text');
+form.addEventListener('submit', (e) => {
+    e.preventDefault(); //Submit yapıldığında sayfanın reload atmaması işlevi
+    denemeText.innerText = searchInput.value;
+});
+*/
 
-    if (isMenuOpen) {
-        navs.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    } else {
-        navs.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-}
+// Örnek veri kartlarını doldurmak için
+function populateSliders() {
+    const sampleData = [
+        {
+            category: "muzik",
+            posts: [
+                { title: "Müziğin Gücü", image: "https://via.placeholder.com/280x150", description: "Müziğin hayatımızdaki etkisi..." },
+                { title: "Rock ve Roll", image: "https://via.placeholder.com/280x150", description: "Rock müziğin altın çağı..." },
+            ],
+        },
+        {
+            category: "spor",
+            posts: [
+                { title: "Sporun Faydaları", image: "https://via.placeholder.com/280x150", description: "Sağlıklı yaşam için spor..." },
+                { title: "Futbolun Dinamikleri", image: "https://via.placeholder.com/280x150", description: "Futbol dünyasına bir bakış..." },
+            ],
+        },
+    ];
 
-document.addEventListener('DOMContentLoaded', function() {
-    window.addEventListener('resize', function() {
-        const navs = document.getElementById('navs');
-        if (window.innerWidth > 960) {
-            navs.style.display = 'flex';
-            navs.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        } else {
-            if (!navs.classList.contains('active')) {
-                navs.style.display = 'none';
-            }
+    sampleData.forEach((category) => {
+        const slider = document.getElementById(`slider-${category.category}`);
+        if (slider) {
+            category.posts.forEach((post) => {
+                const card = document.createElement("div");
+                card.className = "post-card";
+                card.innerHTML = `
+          <img src="${post.image}" alt="${post.title}">
+          <div class="post-card-content">
+            <h3 class="post-card-title">${post.title}</h3>
+            <p class="post-card-desc">${post.description}</p>
+          </div>
+        `;
+                slider.appendChild(card);
+            });
         }
     });
+}
 
+document.addEventListener("DOMContentLoaded", populateSliders);
 
-    //navs itemlerine tıklandığında menünün kapatılması
-    const navBarItems = document.querySelectorAll('#navs a');
-    navBarItems.forEach(link => {
-        link.addEventListener('click', function() {
-            if (window.innerWidth <= 960) {
-                const navs = document.getElementById('navs');
-                navs.classList.remove('active');
-                document.body.style.overflow = 'auto';
-                navs.style.display = 'none';
-            }
-        });
-    });
-});

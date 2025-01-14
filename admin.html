@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/admin.css">
+  <title>Admin | Kozmos - Galaksi Rehberiniz</title>
+
+  <script src="https://kit.fontawesome.com/8e198f5d67.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+  <h1>Admin Panel</h1>
+  <button id="logout-btn" class="hidden"><i class="fa-solid fa-right-from-bracket" style="margin-right: 10px"></i>Çıkış</button>
+</header>
+
+<div id="content">
+  <div id="login-form">
+    <h2>Admin Giriş</h2>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" placeholder="Email giriniz...">
+    </div>
+    <div class="form-group">
+      <label for="password">Şifre:</label>
+      <input type="password" name="password" id="password" placeholder="Şifre giriniz...">
+    </div>
+    <button id="login-btn">Giriş Yap</button>
+  </div>
+
+  <div id="upload-form" class="hidden">
+    <h2>Yeni Gönderi Paylaş</h2>
+    <div class="form-group">
+      <label for="post-title">Başlık:</label>
+      <input type="text" id="post-title" placeholder="Gönderi Başlığı">
+    </div>
+    <div class="form-group">
+      <label for="post-duration">Okuma Süresi:</label>
+      <input type="number" id="post-duration" placeholder="Okuma Süresi (dk.)">
+    </div>
+    <div class="form-group">
+      <label for="post-description">Açıklama:</label>
+      <textarea id="post-description" rows="2" placeholder="Gönderi Kısa Açıklaması"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="post-category">Kategori:</label>
+      <div id="post-category">
+        <label><input type="radio" name="category" value="muzik"> Müzik</label><br>
+        <label><input type="radio" name="category" value="spor"> Spor</label><br>
+        <label><input type="radio" name="category" value="sinema-dizi"> Sinema & Dizi</label><br>
+        <label><input type="radio" name="category" value="kultur"> Kültür</label><br>
+        <label><input type="radio" name="category" value="oyun"> Oyun</label><br>
+        <label><input type="radio" name="category" value="teknoloji"> Teknoloji</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="post-text">Ana Yazı:</label>
+      <textarea id="post-text" rows="6" placeholder="Gönderi Ana Yazısı"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="post-image">Görsel yükle</label>
+      <input type="text" id="post-image" placeholder="Post Image URL">
+    </div>
+    <div class="form-group">
+      <label for="post-referances">Kaynaklar (Zorunlu Değil):</label>
+      <input type="text" id="post-referances" placeholder="Kaynaklarınız">
+    </div>
+    <button id="submit-post">Submit</button>
+  </div>
+
+  <div id="all-posts" class="hidden">
+    <h2>Tüm Yazılar</h2>
+    <div id="posts-list">
+      <!-- dinamik olarak buraya gelecek yazılar -->
+    </div>
+  </div>
+</div>
+
+<script type="module" src="scripts/admin.js"></script>
+</body>
+</html>

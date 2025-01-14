@@ -1,285 +1,157 @@
-.yeseva-one-regular {
-    font-family: "Yeseva One", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-body{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #24253a;
-    color: white;
-    font-family: "Arial", serif;
-    margin: 0;
-}
-
-/* GENERAL PURPOSES */
-.strongtexts{
-    font-family: "Yeseva One", serif;
-}
-.clickable:hover{
-    cursor: pointer;
-    color: #f39e52;
-    background-color: #404367;
-    scale: 1.1;
-    transition: scale 0.4s ease, color 0.4s ease, background-color 0.4s ease;
-}
-i{
-    font-size: 25px;
-    color: white;
-    padding: 5px 15px 5px 15px;
-}
-.hr{
-    color: slategrey;
-    height: 1px;
-    background-color: slategrey;
-    border: 0;
-    margin-left: 0;
-    margin-right: 0;
-}
-p{
-    font-size: 20px;
-}
-/********************/
-
-/* CONTACT BAR */
-#contactBar{
-    display: flex;
-    justify-content: space-between;
-    background-color: #423651;
-    margin: 0 0 15px 0;
-    font-size: 13px;
-    font-family: "Arial", serif;
-    color: white;
-}
-#contactBar #mailSection{
-    display: flex;
-    align-items: center;
-    gap: 1px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-#contactBar #mailSection img{
-    height: 30px;
-    width: 30px;
-    padding: 5px;
-    border-radius: 6px;
-}
-#contactBar #socialMediaNavs{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-.socialMediaNavLogos{
-    height: 30px;
-    width: 30px;
-    border-radius: 7px;
-    transition: width 0.4s ease, height 0.4s ease;
-}
-#contactBar #socialMediaNavs #facebookLogo:hover, #twitterLogo:hover, #instagramLogo:hover {
-    height: 35px;
-    width: 35px;
-    cursor: pointer;
-}
-#contactBar #socialMediaNavs #twitterLogo:hover{
-    background-color: #1DA1F2;
-}
-#contactBar #socialMediaNavs #instagramLogo:hover{
-    background-color: #C13584;
-}
-/********************/
-
-/* HEADER BAR */
-#headerBar{
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0 4% 0 4%;
-}
-#headerBar #logo{
-    cursor: pointer;
-}
-#headerBar #logo img{
-    width: 200px;
-    transition: width 0.4s ease;
-}
-#headerBar #logo img:hover{
-    width: 250px;
-}
-#headerBar .nav-toggle{
-    display: none;
-    border: 1px solid slategrey;
-    font-size: 15px;
-    border-radius: 10px;
-    align-items: center;
-    scale: 1;
-}
-#headerBar #navs{
-    display: flex;
-    flex-wrap: wrap;
-    place-items: center;
-    gap: 10px;
-}
-#headerBar #navs .close-button{
-    display: none;
-}
-#headerBar #navs a{
-    border: 1px solid slategrey;
-    font-size: 15px;
-    border-radius: 10px;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-}
-#headerBar #navs a i{
-    position: relative;
-    margin-right: 10px;
-    font-size: 18px;
-    padding: 0;
-}
-#headerBar #navs a:link, a:visited{
-    color: white;
-    text-decoration: none;
-}
-/********************/
-
 /* MAIN SECTION */
-#main{
-    position: relative;
-    margin: 4vh 4% 2% 4%;
-}
 
+main{
+    margin: 0 10% 0 10%;
+}
 #magZeppelinText{
     color: #f39e52;
 }
 
-#main #searchDiv{
+#welcome-heading{
+    text-align: center;
+    margin-top: 10vh;
+    font-size: 6vh;
+}
+
+#welcome-text{
+    text-align: center;
+}
+
+main #searchDiv form{
     display: flex;
-    position: absolute;
+    position: relative;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    margin-top: 3vh;
+    margin-top: 6vh;
     left: 50%;
     right: 50%;
     width: 100%;
     transform: translate(-50%, -50%);
     padding: 5px 20px 5px 20px;
 }
-#searchDiv input{
+#searchDiv form input{
     border: 5px solid #423651;
     border-radius: 20px;
     position: relative;
-    width: 60vh;
+    width: 70vh;
     font-size: 20px;
     padding: 5px 15px 5px 15px;
+    color: #423651;
 }
-#searchDiv input:focus{
+#searchDiv form input:focus{
     outline: none;
 }
-#searchDiv i{
-    border: 4px solid #423651;
-    border-radius: 20px;
-    padding: 5px 15px 5px 15px;
+#searchDiv form button{
+    border: none;
+    padding: 0;
+    background: none;
 }
-/********************/
+#searchDiv form button i{
+    border: 4px solid #423651;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 20px;
+}
 
-/* FOOTER SECTION */
-footer{
+#categories {
+    position: relative;
+    margin-top: 5%;
+    padding: 20px;
+}
+
+.category {
+    margin-bottom: 40px;
+    border-radius: 10px;
+    border: 3px solid slategray;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: relative;
+}
+
+.category h2 {
+    font-size: 4.5vh;
+    margin-bottom: 15px;
+}
+
+.slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.slider::-webkit-scrollbar {
+    display: none;
+}
+
+.slider .post-card {
+    min-width: 280px;
+    flex: 0 0 auto;
+    background: none;
+    border-radius: 0;
+    border: 3px solid slategray;
+    box-shadow: 8px 12px #423651;
+    overflow: hidden;
+    margin-bottom: 10vh;
+    margin-top: 5vh;
+    position: relative;
+}
+
+.slider .post-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.slider .post-card-content {
+    padding: 10px;
+}
+
+.slider .post-card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.slider .post-card-desc {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.btn{
+    border: 1px solid slategray;
+    font-size: 15px;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    width: 20vh;
+    text-decoration: none;
+    align-items: center;
     position: absolute;
-    bottom: 0;
-    left: 4%;
-    right: 4%;
-    background: #423651;
-    border-radius: 15px 15px 0 0;
-    padding: 10px 40px;
+    right: 3vh;
+    bottom: 3vh;
+}
+
+.btn i{
+    position: relative;
+    margin-right: 10px;
+    font-size: 15px;
+    padding: 0;
 }
 /********************/
 
 /* RESPONSIVENESS SETTINGS */
 @media (max-width: 960px){
-    #headerBar{
-        display: flex;
-        justify-content: flex-start;
-        text-align: center;
-        align-items: center;
+    main{
+        margin: 0 2% 0 2%;
     }
-    #headerBar #logo img{
-        width: 230px;
-    }
-    #headerBar #logo img:hover{
-        width: 330px;
-    }
-    #headerBar .nav-toggle{
-        display: flex;
-        position: absolute;
-        height: 70%;
-        width: 10%;
-        right: 0;
-        border: 1px solid slategrey;
-        border-radius: 10px;
-        color: white;
-        background: none;
-        cursor: pointer;
-        align-items: center;
-        justify-content: center;
-    }
-    #headerBar #navs{
-        justify-content: center;
-        display: none;
-        flex-direction: column;
-    }
-    #navs.active {
-        display: flex !important;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #423651;
-        z-index: 100;
-        animation: slideDown 0.3s ease-out;
-    }
-    #headerBar #navs .close-button {
-        position: absolute;
-        top: 20px;
-        right: 20px;
+    #welcome-text{
         font-size: 25px;
-        padding: 10px;
-        border: 1px solid slategrey;
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    #headerBar #navs .close-button i {
-        font-size: 30px;
-        padding: 0;
-    }
-    #headerBar #navs a{
-        width: 70%;
-        justify-content: center;
-        margin: 10px 0;
-        font-size: 25px;
-    }
-    .clickable:hover{
-        scale: 1.06;
+        margin: 0 8% 0 8%;
     }
 }
 /********************/
 
-/* ANIMATIONS ETC. */
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-/********************/
+
