@@ -1,5 +1,5 @@
 function indexLoad(){
-    window.open("index.html");
+    window.open("index.html", '_self');
 }
 
 function goToTwitterPage(){

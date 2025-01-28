@@ -74,19 +74,25 @@ main #searchDiv form{
     margin-bottom: 15px;
 }
 
+.category h2 i{
+    font-size: 3.5vh;
+    margin-right: 1vw;
+}
+
 .slider {
     display: flex;
     gap: 20px;
-    overflow-x: auto;
+    overflow-x: hidden;
     padding-bottom: 10px;
 }
 
-.slider::-webkit-scrollbar {
-    display: none;
-}
+    .slider::-webkit-scrollbar {
+        display: none;
+    }
 
 .slider .post-card {
-    min-width: 280px;
+    width: 31%;
+    height: 50%;
     flex: 0 0 auto;
     background: none;
     border-radius: 0;
@@ -96,6 +102,14 @@ main #searchDiv form{
     margin-bottom: 10vh;
     margin-top: 5vh;
     position: relative;
+    cursor: pointer;
+    transition: scale 0.1s ease, margin-left 0.1s ease;
+}
+
+.slider .post-card:hover {
+    scale: 1.02;
+    margin-left:4px;
+    margin-right: 4px;
 }
 
 .slider .post-card img {
@@ -109,14 +123,28 @@ main #searchDiv form{
 }
 
 .slider .post-card-title {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: bold;
     margin-bottom: 8px;
 }
 
 .slider .post-card-desc {
-    font-size: 0.9rem;
-    color: #666;
+    font-size: 1rem;
+    color: slategray;
+}
+
+.slider .date-and-time{
+    display: flex;
+    color: slategray;
+    font-size: 1rem;
+    gap: 20px;
+}
+
+.slider i {
+    color: slategray;
+    padding: 0;
+    font-size: 20px;
+    margin-right: 5px;
 }
 
 .btn{
@@ -147,10 +175,33 @@ main #searchDiv form{
     main{
         margin: 0 2% 0 2%;
     }
-    #welcome-text{
+    #welcome-text {
         font-size: 25px;
         margin: 0 8% 0 8%;
     }
+
+    /*.slider{
+        display: flex;
+        flex-direction: column;
+        overflow: scroll;
+    }
+
+    .category{
+        position: relative;
+        height: 50vh;
+        overflow: scroll;
+    }
+
+    .slider .post-card{
+        width: 95%;
+        margin-top: 5px;
+    }
+    
+    .btn{
+        position: relative;
+        bottom: 0;
+    }*/
+
 }
 /********************/
 

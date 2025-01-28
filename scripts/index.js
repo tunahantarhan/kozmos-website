@@ -1,52 +1,137 @@
-console.log('Happy developing ✨')
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+import {
+    getDatabase,
+    ref,
+    onValue,
+    orderByKey,
+    limitToLast, query
+} from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
 
-/*
-const form = document.querySelector('form');
-const searchInput = document.getElementById('search');
-const denemeText = document.getElementById('text');
-form.addEventListener('submit', (e) => {
-    e.preventDefault(); //Submit yapıldığında sayfanın reload atmaması işlevi
-    denemeText.innerText = searchInput.value;
-});
-*/
+const firebaseConfig = {
+    apiKey: "AIzaSyAbS0qfaMPmvwzHxuqGWXWKme1UwAvEqq0",
+    authDomain: "blogwebsite-9e0fd.firebaseapp.com",
+    projectId: "blogwebsite-9e0fd",
+    storageBucket: "blogwebsite-9e0fd.firebasestorage.app",
+    messagingSenderId: "214876249431",
+    appId: "1:214876249431:web:120f26b0ef1ab6e219f212",
+    measurementId: "G-MDJTGEZD85"
+};
 
-// Örnek veri kartlarını doldurmak için
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+// slider doldurma
 function populateSliders() {
-    const sampleData = [
-        {
-            category: "muzik",
-            posts: [
-                { title: "Müziğin Gücü", image: "https://via.placeholder.com/280x150", description: "Müziğin hayatımızdaki etkisi..." },
-                { title: "Rock ve Roll", image: "https://via.placeholder.com/280x150", description: "Rock müziğin altın çağı..." },
-            ],
-        },
-        {
-            category: "spor",
-            posts: [
-                { title: "Sporun Faydaları", image: "https://via.placeholder.com/280x150", description: "Sağlıklı yaşam için spor..." },
-                { title: "Futbolun Dinamikleri", image: "https://via.placeholder.com/280x150", description: "Futbol dünyasına bir bakış..." },
-            ],
-        },
-    ];
+    const postsRef = ref(db, 'posts');
 
-    sampleData.forEach((category) => {
-        const slider = document.getElementById(`slider-${category.category}`);
-        if (slider) {
-            category.posts.forEach((post) => {
-                const card = document.createElement("div");
-                card.className = "post-card";
-                card.innerHTML = `
-          <img src="${post.image}" alt="${post.title}">
-          <div class="post-card-content">
-            <h3 class="post-card-title">${post.title}</h3>
-            <p class="post-card-desc">${post.description}</p>
-          </div>
-        `;
-                slider.appendChild(card);
+    onValue(postsRef, (snapshot) => {
+        const categories = {};
+
+        snapshot.forEach((childSnapshot) => {
+            const postData = childSnapshot.val();
+            const timestamp = childSnapshot.key;
+
+            const postDate = new Date(parseInt(timestamp));
+            const formattedDate = postDate.toLocaleDateString("tr-TR", {
+                day: "2-digit",
+                month: "long",
+                year: "numeric"
             });
+
+            if (!categories[postData.category]) {
+                categories[postData.category] = [];
+            }
+            categories[postData.category].push({
+                title: postData.title,
+                image: postData.imageUrl,
+                description: postData.description.substring(0, 100) + '...',
+                date: formattedDate,
+                readingTime: postData.readingTime
+            });
+        });
+
+        for (const category in categories) {
+            const slider = document.getElementById(`slider-${category}`);
+            if (slider) {
+                slider.innerHTML = "";
+                categories[category].forEach((post) => {
+                    const card = document.createElement("div");
+                    card.className = "post-card";
+                    card.innerHTML = `
+                        <img src="${post.image}" alt="${post.title}">
+                        <div class="post-card-content">
+                            <h3 class="post-card-title">${post.title}</h3>
+                            <p class="post-card-desc">${post.description}</p>
+                            <div class="date-and-time">
+                                <h5 class="post-card-date"><i class="fa-solid fa-calendar"></i>${post.date}</h5>
+                                <h5 class="post-card-readingTime"><i class="fa-solid fa-glasses"></i>${post.readingTime} dk.</h5>
+                            </div>
+                        </div>
+                    `;
+                    slider.appendChild(card);
+                });
+            } else {
+                console.warn(`Kategori için slider bulunamadı: ${category}`);
+            }
         }
+    }, (error) => {
+        console.error("Veriyi çekerken hata oluştu: ", error);
     });
 }
 
-document.addEventListener("DOMContentLoaded", populateSliders);
+function populateLatestPosts() {
+    const latestPostsRef = query(ref(db, 'posts'), orderByKey(), limitToLast(3));
 
+    onValue(latestPostsRef, (snapshot) => {
+        const posts = [];
+        snapshot.forEach((childSnapshot) => {
+            const postData = childSnapshot.val();
+            const timestamp = childSnapshot.key;
+
+            const postDate = new Date(parseInt(timestamp));
+            const formattedDate = postDate.toLocaleDateString("tr-TR", {
+                day: "2-digit",
+                month: "long",
+                year: "numeric"
+            });
+
+            posts.unshift({ //yenileri başa ekleme işlemi
+                title: postData.title,
+                image: postData.imageUrl,
+                description: postData.description.substring(0, 100) + '...',
+                date: formattedDate,
+                readingTime: postData.readingTime
+            });
+        });
+
+        const slider = document.getElementById("slider-tum-yazilar");
+        if (slider) {
+            slider.innerHTML = "";
+            posts.forEach((post) => {
+                const card = document.createElement("div");
+                card.className = "post-card";
+                card.innerHTML = `
+                    <img src="${post.image}" alt="${post.title}">
+                    <div class="post-card-content">
+                        <h3 class="post-card-title">${post.title}</h3>
+                        <p class="post-card-desc">${post.description}</p>
+                        <div class="date-and-time">
+                            <h5 class="post-card-date"><i class="fa-solid fa-calendar"></i>${post.date}</h5>
+                            <h5 class="post-card-readingTime"><i class="fa-solid fa-glasses"></i>${post.readingTime} dk.</h5>
+                        </div>
+                    </div>
+                `;
+                slider.appendChild(card);
+            });
+        } else {
+            console.warn("Gönderi bulunamadı.");
+        }
+    }, (error) => {
+        console.error("Veri çekme hatası: ", error);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    populateLatestPosts();
+    populateSliders()
+});

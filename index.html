@@ -38,13 +38,13 @@
             <div class="close-button clickable" onclick="toggleNav()">
                 <i class="fa-solid fa-xmark"></i>
             </div>
-            <a class="strongtexts clickable" href=""><i class="fa-solid fa-book"></i>Tüm Yazılar</a>
-            <a class="strongtexts clickable" href=""><i class="fa-solid fa-music"></i>Müzik</a>
-            <a class="strongtexts clickable" href=""><i class="fa-regular fa-futbol"></i>Spor</a>
-            <a class="strongtexts clickable" href=""><i class="fa-regular fa-film"></i>Sinema & Dizi</a>
-            <a class="strongtexts clickable" href=""><i class="fa-solid fa-pen-nib"></i>Kültür</a>
-            <a class="strongtexts clickable" href=""><i class="fa-solid fa-gamepad"></i>Oyun</a>
-            <a class="strongtexts clickable" href=""><i class="fa-solid fa-computer"></i>Teknoloji</a>
+            <a class="strongtexts clickable" href="posts.html"><i class="fa-solid fa-book"></i>Tüm Yazılar</a>
+            <a class="strongtexts clickable" href="posts.html?category=muzik"><i class="fa-solid fa-music"></i>Müzik</a>
+            <a class="strongtexts clickable" href="posts.html?category=spor"><i class="fa-regular fa-futbol"></i>Spor</a>
+            <a class="strongtexts clickable" href="posts.html?category=sinema-dizi"><i class="fa-regular fa-film"></i>Sinema & Dizi</a>
+            <a class="strongtexts clickable" href="posts.html?category=kultur"><i class="fa-solid fa-pen-nib"></i>Kültür</a>
+            <a class="strongtexts clickable" href="posts.html?category=oyun"><i class="fa-solid fa-gamepad"></i>Oyun</a>
+            <a class="strongtexts clickable" href="posts.html?category=teknoloji"><i class="fa-solid fa-computer"></i>Teknoloji</a>
         </div>
     </nav>
 
@@ -67,11 +67,10 @@
 
         <section id="categories">
             <div class="category" id="tum-yazilar">
-                <h2 class="strongtexts">En Son Paylaşımlar</h2>
+                <h2 class="strongtexts"><i class="fa-solid fa-clock"></i>En Son Paylaşımlar</h2>
                 <div class="slider" id="slider-tum-yazilar">
                     <!-- yazı kartları dinamik olarak yüklenecek -->
                 </div>
-                <a class="btn clickable strongtexts" href="posts.html" target="_blank"><i class="fa-regular fa-eye"></i>Tümünü Gör</a>
             </div>
 
             <div class="category" id="muzik">
@@ -81,6 +80,7 @@
                 </div>
                 <a class="btn clickable strongtexts" href="posts.html?category=muzik" target="_blank"><i class="fa-regular fa-eye"></i>Tümünü Gör</a>
             </div>
+
 
             <div class="category" id="spor">
                 <h2 class="strongtexts"><i class="fa-solid fa-futbol"></i>Spor</h2>
@@ -129,32 +129,10 @@
     <p>Blog Ipsum by <a href="https://github.com/tunahantarhan" target="_blank">Tunahan Tarhan</a></p>
 </footer>
 
-<script src="scripts/index.js"></script>
+<!-- Firebase SDK -->
+<script type="module" src="scripts/firebase-config.js"></script>
+<script type="module" src="scripts/index.js"></script>
 <script src="scripts/global.js"></script>
 
-<!-- Firebase SDK -->
-<script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-analytics.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-        apiKey: "AIzaSyAbS0qfaMPmvwzHxuqGWXWKme1UwAvEqq0",
-        authDomain: "blogwebsite-9e0fd.firebaseapp.com",
-        projectId: "blogwebsite-9e0fd",
-        storageBucket: "blogwebsite-9e0fd.firebasestorage.app",
-        messagingSenderId: "214876249431",
-        appId: "1:214876249431:web:120f26b0ef1ab6e219f212",
-        measurementId: "G-MDJTGEZD85"
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-</script>
 
 </html>
