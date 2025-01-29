@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Ipsum - Galaksi Rehberi</title>
+    <link rel="stylesheet" href="css/posts.css">
     <link rel="stylesheet" href="css/global.css">
 
     <!-- font : Yeseva One -->
@@ -49,8 +50,30 @@
 
 <hr class="hr">
 
-<main id="main">
+<div class="intro-container">
+    <p class="strongtexts" id="welcome-text">Blog portalındasınız. Yayınlanmış yazılar arasında keşfe çıkın!</p>
+    <div id="view-option-container">
+        <button class="viewBtn clickable strongtexts" id="grid-view-btn"><i class="fa-solid fa-table-cells"></i></button>
+        <button class="viewBtn clickable strongtexts" id="list-view-btn"><i class="fa-solid fa-list"></i></button>
+    </div>
+</div>
 
+<main id="main">
+    <aside class="filter-bar" id="filter-bar-section">
+        <button class="filter-toggle-btn" id="filter-toggle"><i class="fa-solid fa-filter"></i><span class="strongtexts">Kategori Filtrele</span></button>
+        <ul id="category-list">
+            <li class="strongtexts clickable" data-category=""><i class="fa-solid fa-book"></i>Tüm Yazılar</li>
+            <li class="strongtexts clickable" data-category="muzik"><i class="fa-solid fa-music"></i>Müzik</li>
+            <li class="strongtexts clickable" data-category="spor"><i class="fa-solid fa-futbol"></i>Spor</li>
+            <li class="strongtexts clickable" data-category="sinema-dizi"><i class="fa-solid fa-film"></i>Sinema & Dizi</li>
+            <li class="strongtexts clickable" data-category="kultur"><i class="fa-solid fa-pen-nib"></i>Kültür</li>
+            <li class="strongtexts clickable" data-category="oyun"><i class="fa-solid fa-gamepad"></i>Oyun</li>
+            <li class="strongtexts clickable" data-category="teknoloji"><i class="fa-solid fa-computer"></i>Teknoloji</li>
+        </ul>
+    </aside>
+    <section class="content">
+        <div id="post-container"></div>
+    </section>
 </main>
 </body>
 
@@ -59,7 +82,7 @@
     <p>Blog Ipsum by <a href="https://github.com/tunahantarhan" target="_blank">Tunahan Tarhan</a></p>
 </footer>
 
-<script src="scripts/index.js"></script>
+<script type="module" src="scripts/posts.js"></script>
 <script src="scripts/global.js"></script>
 
 <!-- Firebase SDK -->

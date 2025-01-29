@@ -1,0 +1,199 @@
+main {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 250px auto;
+    gap: 2rem;
+    margin-top: 40px !important;
+}
+
+.intro-container{
+    margin: 6% 4% 0 4%;
+}
+
+#welcome-text {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 80px !important;
+}
+
+#view-option-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#view-option-container button {
+    background: none;
+    border: 3px solid slategray;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+}
+
+#view-option-container button:hover {
+    background-color: #404367;
+    i{
+        color: #f39e52;
+    }
+}
+
+.filter-bar {
+    border: 3px solid slategray;
+    border-radius: 5px;
+    background: none;
+    position: sticky;
+    top: 20px;
+    height: 100vh;
+}
+
+.filter-bar ul {
+    list-style: none;
+    padding: 10px;
+}
+
+.filter-bar li {
+    padding: 0.5rem 0;
+    cursor: pointer;
+    color: white;
+    border: 1px solid slategray;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.filter-bar li i {
+    font-size: 15px;
+}
+
+.filter-toggle-btn{
+    background: #423651;
+    color: white;
+    width: 100%;
+    text-align: left;
+    border: 1px solid slategray;
+    border-radius: 3px;
+    font-family: "Yeseva One", serif !important;
+    font-size: 17px;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.filter-toggle-btn i{
+    font-size: 17px;
+}
+
+#post-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.post {
+    border: 3px solid slategray;
+    box-shadow: 8px 12px #423651;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.post:hover {
+    scale: 1.02;
+    box-shadow: 16px 24px #423651;
+}
+
+.post img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.post h2 {
+    margin: 0;
+    padding: 0.5rem;
+    font-size: 1.3rem;
+    background: #423651;
+}
+
+.post p {
+    padding: 0.5rem;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.post .read-more {
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: none;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    border: 3px solid slategray;
+    font-size: 15px;
+    transition: all 0.2s ease;
+}
+
+.post .read-more:hover{
+    margin-left: 1vw;
+}
+
+.post .read-more i{
+    position: relative;
+    margin-right: 10px;
+    font-size: 15px;
+    padding: 0;
+}
+
+/* RESPONSIVENESS SETTINGS */
+@media (max-width: 1160px) {
+    #welcome-text {
+        font-size: 25px;
+        margin-bottom: 5vh;
+    }
+    .post .read-more:hover{
+        margin-left: 2vw;
+    }
+    main {
+        grid-template-columns: 1fr;
+    }
+    .filter-toggle-btn{
+        text-align: center;
+    }
+    .filter-bar {
+        width: 100%;
+        position: static;
+        margin-right: 200px;
+        height: fit-content !important;
+    }
+    .filter-bar.active {
+        display: block;
+    }
+    .filter-bar li:hover{
+        scale: 1.01 !important;
+    }
+}
+@media (max-width: 710px) {
+    #view-option-container{
+        display: none;
+    }
+    #post-container{
+        display: block !important;
+    }
+    #post-container .post{
+        margin-bottom: 2.5rem;
+    }
+}
+/********************/
+
+/* ANIMATIONS, SCROLLBAR ETC. */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/********************/

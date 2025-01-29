@@ -26,7 +26,7 @@ function toggleNav(){
 document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', function() {
         const navs = document.getElementById('navs');
-        if (window.innerWidth > 960) {
+        if (window.innerWidth > 1160) {
             navs.style.display = 'flex';
             navs.classList.remove('active');
             document.body.style.overflow = 'auto';
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const navBarItems = document.querySelectorAll('#navs a');
     navBarItems.forEach(link => {
         link.addEventListener('click', function() {
-            if (window.innerWidth <= 960) {
+            if (window.innerWidth <= 1160) {
                 const navs = document.getElementById('navs');
                 navs.classList.remove('active');
                 document.body.style.overflow = 'auto';

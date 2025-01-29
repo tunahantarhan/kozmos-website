@@ -22,12 +22,15 @@ body{
 .strongtexts{
     font-family: "Yeseva One", serif;
 }
+.clickable:active, .clickable:visited{
+    color: white;
+}
 .clickable:hover{
     cursor: pointer;
     color: #f39e52;
     background-color: #404367;
     scale: 1.1;
-    transition: scale 0.4s ease, color 0.4s ease, background-color 0.4s ease;
+    transition: all 0.2s ease;
 }
 i{
     font-size: 25px;
@@ -81,7 +84,7 @@ p{
     height: 30px;
     width: 30px;
     border-radius: 7px;
-    transition: width 0.4s ease, height 0.4s ease;
+    transition: all 0.2s ease;
 }
 #contactBar #socialMediaNavs #facebookLogo:hover, #twitterLogo:hover, #instagramLogo:hover {
     height: 35px;
@@ -109,7 +112,7 @@ p{
 }
 #headerBar #logo img{
     width: 200px;
-    transition: width 0.4s ease;
+    transition: all 0.2s ease;
 }
 #headerBar #logo img:hover{
     width: 250px;
@@ -176,7 +179,7 @@ footer p, a{
 /********************/
 
 /* RESPONSIVENESS SETTINGS */
-@media (max-width: 960px) {
+@media (max-width: 1160px) {
     html, body {
         margin: 0;
         padding: 0;

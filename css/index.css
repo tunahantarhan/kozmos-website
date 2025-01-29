@@ -54,6 +54,8 @@ main #searchDiv form{
     font-size: 20px;
 }
 
+
+
 #categories {
     position: relative;
     margin-top: 5%;
@@ -61,6 +63,7 @@ main #searchDiv form{
 }
 
 .category {
+    background: #423651;
     margin-bottom: 40px;
     border-radius: 10px;
     border: 3px solid slategray;
@@ -70,46 +73,42 @@ main #searchDiv form{
 }
 
 .category h2 {
-    font-size: 4.5vh;
+    font-size: 2.5vw;
     margin-bottom: 15px;
 }
 
 .category h2 i{
-    font-size: 3.5vh;
+    font-size: 2vw;
     margin-right: 1vw;
 }
 
 .slider {
-    display: flex;
-    gap: 20px;
-    overflow-x: hidden;
-    padding-bottom: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
 }
 
-    .slider::-webkit-scrollbar {
+.slider::-webkit-scrollbar {
         display: none;
-    }
+}
 
 .slider .post-card {
-    width: 31%;
-    height: 50%;
-    flex: 0 0 auto;
-    background: none;
     border-radius: 0;
     border: 3px solid slategray;
-    box-shadow: 8px 12px #423651;
+    background: #24253a;
     overflow: hidden;
     margin-bottom: 10vh;
     margin-top: 5vh;
     position: relative;
     cursor: pointer;
-    transition: scale 0.1s ease, margin-left 0.1s ease;
+    transition: all 0.2s ease;
 }
 
 .slider .post-card:hover {
     scale: 1.02;
     margin-left:4px;
     margin-right: 4px;
+    box-shadow: 8px 12px #24253a;
 }
 
 .slider .post-card img {
@@ -148,7 +147,7 @@ main #searchDiv form{
 }
 
 .btn{
-    border: 1px solid slategray;
+    border: 3px solid slategray;
     font-size: 15px;
     border-radius: 10px;
     padding: 10px;
@@ -159,7 +158,7 @@ main #searchDiv form{
     align-items: center;
     position: absolute;
     right: 3vh;
-    bottom: 3vh;
+    bottom: 2vh;
 }
 
 .btn i{
@@ -171,13 +170,21 @@ main #searchDiv form{
 /********************/
 
 /* RESPONSIVENESS SETTINGS */
-@media (max-width: 960px){
+@media (max-width: 1160px){
     main{
         margin: 0 2% 0 2%;
     }
     #welcome-text {
         font-size: 25px;
         margin: 0 8% 0 8%;
+    }
+    .category h2 {
+        font-size: 5vw;
+        margin-bottom: 15px;
+    }
+    .category h2 i{
+        font-size: 4vw;
+        margin-right: 1vw;
     }
 
     /*.slider{
