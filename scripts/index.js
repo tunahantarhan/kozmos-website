@@ -21,7 +21,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-//category'ye sahip olanlar için category içi slider doldurma
+// category'ye sahip olanlar için category içi slider doldurma
 function populateSliders() {
     const postsRef = ref(db, 'posts');
 
@@ -43,7 +43,7 @@ function populateSliders() {
                 categories[postData.category] = [];
             }
             categories[postData.category].push({
-                timestamp: parseInt(timestamp),
+                id: timestamp,  //database'de zaten id timestamp olarak tutuluyor
                 title: postData.title,
                 image: postData.imageUrl,
                 description: postData.description.substring(0, 100) + '...',
@@ -54,7 +54,7 @@ function populateSliders() {
 
         for (const category in categories) {
             //en yeni 3 post card filtreleme ve sıralama
-            categories[category].sort((a, b) => b.timestamp - a.timestamp);
+            categories[category].sort((a, b) => b.id - a.id);
             const latestPosts = categories[category].slice(0, 3);
 
             const slider = document.getElementById(`slider-${category}`);
@@ -75,6 +75,10 @@ function populateSliders() {
                         </div>
                     `;
                     slider.appendChild(card);
+
+                    card.addEventListener("click", () => {
+                        window.location.href = `post-detail.html?title=${encodeURIComponent(post.title)}&id=${post.id}`;
+                    });
                 });
             } else {
                 console.warn(`Kategori için slider bulunamadı: ${category}`);
@@ -84,6 +88,7 @@ function populateSliders() {
         console.error("Veriyi çekerken hata oluştu: ", error);
     });
 }
+
 
 //en son paylaşımlar kısmı için slider doldurma
 function populateLatestPosts() {
@@ -103,6 +108,7 @@ function populateLatestPosts() {
             });
 
             posts.unshift({ //sıralama
+                id: timestamp,
                 title: postData.title,
                 image: postData.imageUrl,
                 description: postData.description.substring(0, 100) + '...',
@@ -129,6 +135,10 @@ function populateLatestPosts() {
                     </div>
                 `;
                 slider.appendChild(card);
+
+                card.addEventListener("click", () => {
+                    window.location.href = `post-detail.html?title=${encodeURIComponent(post.title)}&id=${post.id}`;
+                });
             });
         } else {
             console.warn("Gönderi bulunamadı.");

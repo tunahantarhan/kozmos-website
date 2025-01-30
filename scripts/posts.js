@@ -86,8 +86,12 @@ function createPostElement(postData, formattedDate) {
             <h5 class="post-card-readingTime"><i class="fa-solid fa-glasses"></i>${postData.readingTime} dk.</h5>
         </div>
         <p>${postData.description}</p>
-        <a class="read-more clickable strongtexts" href="post-detail.html?title=${encodeURIComponent(postData.title)}&id=${postData.id}"><i class="fa-regular fa-eye"></i> Devamını Oku</a>
+        <a class="read-more clickable" id="read-more-btn" href="post-detail.html?title=${encodeURIComponent(postData.title)}&id=${postData.id}"><i class="fa-regular fa-eye"></i> Devamını Oku</a>
     `;
+
+    postDiv.addEventListener("click", (event) => {
+        window.location.href = `post-detail.html?title=${encodeURIComponent(postData.title)}&id=${postData.id}`;
+    });
 
     return postDiv;
 }
@@ -107,14 +111,40 @@ document.getElementById("list-view-btn").addEventListener("click", () => {
 })
 
 
-
-document.getElementById("filter-toggle").addEventListener("click", () => {
-    if (document.getElementById("category-list").style.display !== "none") {
+//mobil görünümde başlangıçta kategori filtreleme açılır kapanır menüsünün kapalı gözükmesi
+document.addEventListener("DOMContentLoaded", () => {
+    if (window.innerWidth < 1160) {
         document.getElementById("category-list").style.display = "none";
         document.getElementById("filter-bar-section").style.height = "fit-content";
     }
-    else{
-        document.getElementById("category-list").style.display = "block";
-        document.getElementById("filter-bar-section").style.height = "100vh";
+});
+
+document.getElementById("filter-toggle").addEventListener("click", () => {
+    const categoryList = document.getElementById("category-list");
+    const filterBarSection = document.getElementById("filter-bar-section");
+
+    if (categoryList.style.display !== "none") {
+        categoryList.style.display = "none";
+        filterBarSection.style.height = "fit-content";
+    } else {
+        categoryList.style.display = "block";
+        filterBarSection.style.height = "100vh";
     }
-})
+});
+
+
+
+//mobildeyken filtreleme yaptıktan sonra filtreleme yerinin kapanması (kullanıcı deneyimi için önemli, değişikliğin algılanması adına)
+document.querySelectorAll("#category-list li").forEach((item) => {
+    item.addEventListener("click", (e) => {
+        const category = e.target.getAttribute("data-category");
+        loadPosts(category);
+
+        if (window.innerWidth < 1160) {
+            document.getElementById("category-list").style.display = "none";
+            document.getElementById("filter-bar-section").style.height = "fit-content";
+        }
+    });
+});
+
+

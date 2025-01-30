@@ -1,12 +1,14 @@
-.yeseva-one-regular {
-    font-family: "Yeseva One", serif;
-    font-weight: 400;
+.lato-bold {
+    font-family: "Lato", serif;
+    font-weight: 700;
     font-style: normal;
 }
+
 html, body {
     margin: 0;
     padding: 0;
     width: 100%;
+    font-family: "Lato", serif;
     overflow-x: hidden; /* Yatay taşmaları engelle */
 }
 body{
@@ -14,13 +16,12 @@ body{
     height: 100%;
     background-color: #24253a;
     color: white;
-    font-family: "", serif;
     margin: 0;
 }
 
 /* GENERAL PURPOSES */
-.strongtexts{
-    font-family: "Yeseva One", serif;
+.clickable{
+    font-weight: 900;
 }
 .clickable:visited{
     color: white;
@@ -66,6 +67,11 @@ p{
     gap: 1px;
     padding-left: 10px;
     padding-right: 10px;
+    cursor: pointer;
+    font-family: "Raleway", sans-serif;
+}
+#contactBar #mailSection:hover{
+    text-decoration: underline;
 }
 #contactBar #mailSection img{
     height: 30px;
@@ -180,6 +186,11 @@ footer{
 footer p, a{
     font-size: 15px;
     color: white;
+    transition: all 0.2s linear !important;
+}
+
+footer a:hover{
+    color: #f39e52;
 }
 /********************/
 
@@ -255,7 +266,7 @@ footer p, a{
         position: absolute;
         top: 10px;
         right: 20px;
-        font-size: 25px;
+        font-size: 20px;
         padding: 10px;
         border: 1px solid slategrey;
         border-radius: 10px;
@@ -270,10 +281,10 @@ footer p, a{
     }
 
     #headerBar #navs a {
-        width: 70%;
+        width: 50%;
         justify-content: center;
-        margin: 10px 0;
-        font-size: 25px;
+        margin: 5px 0;
+        font-size: 20px;
     }
     /********************/
 

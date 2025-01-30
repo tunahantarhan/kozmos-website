@@ -51,3 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+document.getElementById("mailSection").addEventListener('click', function(){
+    window.location.href = "mailto:kozmosrehberiniz@gmail.com";
+})

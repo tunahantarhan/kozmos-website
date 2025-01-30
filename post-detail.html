@@ -7,10 +7,10 @@
   <link rel="stylesheet" href="css/post-detail.css">
   <link rel="stylesheet" href="css/global.css">
 
-  <!-- font : Yeseva One -->
+  <!-- font : Lato -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Yeseva+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
   <!-- ----------------- -->
 
   <script src="https://kit.fontawesome.com/8e198f5d67.js" crossorigin="anonymous"></script>
@@ -19,7 +19,7 @@
 <header id="contactBar">
   <div id="mailSection">
     <img src="img/icons8-@.svg" alt="mail-icon">
-    <p style="font-size: 14px"><b>loremipsum@gmail.com</b></p>
+    <p style="font-size: 14px"><b>kozmosrehberiniz@gmail.com</b></p>
   </div>
   <div id="socialMediaNavs">
     <img class="socialMediaNavLogos" id="twitterLogo" src="img/icons8-twitter-bird.svg" alt="twitter-icon" onclick="goToTwitterPage()">
@@ -38,13 +38,13 @@
     <div class="close-button clickable" onclick="toggleNav()">
       <i class="fa-solid fa-xmark"></i>
     </div>
-    <a class="strongtexts clickable" href="posts.html"><i class="fa-solid fa-book"></i>Tüm Yazılar</a>
-    <a class="strongtexts clickable" href="posts.html?category=muzik"><i class="fa-solid fa-music"></i>Müzik</a>
-    <a class="strongtexts clickable" href="posts.html?category=spor"><i class="fa-regular fa-futbol"></i>Spor</a>
-    <a class="strongtexts clickable" href="posts.html?category=sinema-dizi"><i class="fa-regular fa-film"></i>Sinema & Dizi</a>
-    <a class="strongtexts clickable" href="posts.html?category=kultur"><i class="fa-solid fa-pen-nib"></i>Kültür</a>
-    <a class="strongtexts clickable" href="posts.html?category=oyun"><i class="fa-solid fa-gamepad"></i>Oyun</a>
-    <a class="strongtexts clickable" href="posts.html?category=teknoloji"><i class="fa-solid fa-computer"></i>Teknoloji</a>
+    <a class="clickable" href="posts.html"><i class="fa-solid fa-book"></i>Tüm Yazılar</a>
+    <a class="clickable" href="posts.html?category=muzik"><i class="fa-solid fa-music"></i>Müzik</a>
+    <a class="clickable" href="posts.html?category=spor"><i class="fa-regular fa-futbol"></i>Spor</a>
+    <a class="clickable" href="posts.html?category=sinema-dizi"><i class="fa-regular fa-film"></i>Sinema & Dizi</a>
+    <a class="clickable" href="posts.html?category=kultur"><i class="fa-solid fa-pen-nib"></i>Kültür</a>
+    <a class="clickable" href="posts.html?category=oyun"><i class="fa-solid fa-gamepad"></i>Oyun</a>
+    <a class="clickable" href="posts.html?category=teknoloji"><i class="fa-solid fa-computer"></i>Teknoloji</a>
   </div>
 </nav>
 
@@ -52,12 +52,12 @@
 
 <main id="main">
   <div class="post-container">
-    <h1 class="strongtexts" id="post-title"></h1>
+    <h1 id="post-title"></h1>
     <div class="post-info-container">
-      <p class="info-item strongtexts"><i class="fa-solid fa-inbox"></i><span id="post-category"></span></p>
-      <p class="info-item strongtexts"><strong><i class="fa-solid fa-calendar"></i></strong><span id="post-date"></span></p>
-      <p class="info-item strongtexts"><strong><i class="fa-solid fa-glasses"></i></strong><span id="post-duration"></span></p>
-      <!-- <p class="info-item strongtexts"><strong><i class="fa-solid fa-eye"></i></strong><span id="post-view-count"></span></p> -->
+      <p class="info-item"><i class="fa-solid fa-inbox"></i><span id="post-category"></span></p>
+      <p class="info-item"><strong><i class="fa-solid fa-calendar"></i></strong><span id="post-date"></span></p>
+      <p class="info-item"><strong><i class="fa-solid fa-glasses"></i></strong><span id="post-duration"></span></p>
+      <!-- <p class="info-item"><strong><i class="fa-solid fa-eye"></i></strong><span id="post-view-count"></span></p> -->
     </div>
     <hr>
     <p id="post-description"></p>
@@ -73,14 +73,13 @@
 </body>
 
 <footer>
-  <p>&copy; 2025 Blog Ipsum. Tüm hakları saklıdır.</p>
-  <p>Blog Ipsum by <a href="https://github.com/tunahantarhan" target="_blank">Tunahan Tarhan</a></p>
+  <p>&copy; 2025 Kozmos - Galaksi Rehberiniz. Tüm hakları saklıdır.</p>
+  <p>Kozmos, <a href="https://github.com/tunahantarhan" target="_blank">Tunahan Tarhan</a> tarafından oluşturulmuş ve geliştirilmiştir.</p>
 </footer>
 
+<!-- Scripts -->
 <script type="module" src="scripts/post-detail.js"></script>
 <script src="scripts/global.js"></script>
-
-<!-- Firebase SDK -->
 <script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";

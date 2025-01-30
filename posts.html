@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="css/posts.css">
     <link rel="stylesheet" href="css/global.css">
 
-    <!-- font : Yeseva One -->
+    <!-- font : Lato -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Yeseva+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <!-- ----------------- -->
 
     <script src="https://kit.fontawesome.com/8e198f5d67.js" crossorigin="anonymous"></script>
@@ -19,7 +19,7 @@
 <header id="contactBar">
     <div id="mailSection">
         <img src="img/icons8-@.svg" alt="mail-icon">
-        <p style="font-size: 14px"><b>loremipsum@gmail.com</b></p>
+        <p style="font-size: 14px"><b>kozmosrehberiniz@gmail.com</b></p>
     </div>
     <div id="socialMediaNavs">
         <img class="socialMediaNavLogos" id="twitterLogo" src="img/icons8-twitter-bird.svg" alt="twitter-icon" onclick="goToTwitterPage()">
@@ -38,37 +38,37 @@
         <div class="close-button clickable" onclick="toggleNav()">
             <i class="fa-solid fa-xmark"></i>
         </div>
-        <a class="strongtexts clickable" href="posts.html"><i class="fa-solid fa-book"></i>Tüm Yazılar</a>
-        <a class="strongtexts clickable" href="posts.html?category=muzik"><i class="fa-solid fa-music"></i>Müzik</a>
-        <a class="strongtexts clickable" href="posts.html?category=spor"><i class="fa-regular fa-futbol"></i>Spor</a>
-        <a class="strongtexts clickable" href="posts.html?category=sinema-dizi"><i class="fa-regular fa-film"></i>Sinema & Dizi</a>
-        <a class="strongtexts clickable" href="posts.html?category=kultur"><i class="fa-solid fa-pen-nib"></i>Kültür</a>
-        <a class="strongtexts clickable" href="posts.html?category=oyun"><i class="fa-solid fa-gamepad"></i>Oyun</a>
-        <a class="strongtexts clickable" href="posts.html?category=teknoloji"><i class="fa-solid fa-computer"></i>Teknoloji</a>
+        <a class="clickable" href="posts.html"><i class="fa-solid fa-book"></i>Tüm Yazılar</a>
+        <a class="clickable" href="posts.html?category=muzik"><i class="fa-solid fa-music"></i>Müzik</a>
+        <a class="clickable" href="posts.html?category=spor"><i class="fa-regular fa-futbol"></i>Spor</a>
+        <a class="clickable" href="posts.html?category=sinema-dizi"><i class="fa-regular fa-film"></i>Sinema & Dizi</a>
+        <a class="clickable" href="posts.html?category=kultur"><i class="fa-solid fa-pen-nib"></i>Kültür</a>
+        <a class="clickable" href="posts.html?category=oyun"><i class="fa-solid fa-gamepad"></i>Oyun</a>
+        <a class="clickable" href="posts.html?category=teknoloji"><i class="fa-solid fa-computer"></i>Teknoloji</a>
     </div>
 </nav>
 
 <hr class="hr">
 
 <div class="intro-container">
-    <p class="strongtexts" id="welcome-text">Blog portalındasınız. Yayınlanmış yazılar arasında keşfe çıkın!</p>
+    <p id="welcome-text">Blog portalındasınız. Yayınlanmış yazılar arasında keşfe çıkın! Çeşitli kategorilerden gönderileri seçin ve göz atın.</p>
     <div id="view-option-container">
-        <button class="viewBtn clickable strongtexts" id="grid-view-btn"><i class="fa-solid fa-table-cells"></i></button>
-        <button class="viewBtn clickable strongtexts" id="list-view-btn"><i class="fa-solid fa-list"></i></button>
+        <button class="viewBtn clickable" id="grid-view-btn"><i class="fa-solid fa-table-cells"></i></button>
+        <button class="viewBtn clickable" id="list-view-btn"><i class="fa-solid fa-list"></i></button>
     </div>
 </div>
 
 <main id="main">
     <aside class="filter-bar" id="filter-bar-section">
-        <button class="filter-toggle-btn" id="filter-toggle"><i class="fa-solid fa-filter"></i><span class="strongtexts">Kategori Filtrele</span></button>
+        <button class="filter-toggle-btn" id="filter-toggle"><i class="fa-solid fa-arrow-down-wide-short"></i><span>Kategori Filtrele</span></button>
         <ul id="category-list">
-            <li class="strongtexts clickable" data-category=""><i class="fa-solid fa-book"></i>Tüm Yazılar</li>
-            <li class="strongtexts clickable" data-category="muzik"><i class="fa-solid fa-music"></i>Müzik</li>
-            <li class="strongtexts clickable" data-category="spor"><i class="fa-solid fa-futbol"></i>Spor</li>
-            <li class="strongtexts clickable" data-category="sinema-dizi"><i class="fa-solid fa-film"></i>Sinema & Dizi</li>
-            <li class="strongtexts clickable" data-category="kultur"><i class="fa-solid fa-pen-nib"></i>Kültür</li>
-            <li class="strongtexts clickable" data-category="oyun"><i class="fa-solid fa-gamepad"></i>Oyun</li>
-            <li class="strongtexts clickable" data-category="teknoloji"><i class="fa-solid fa-computer"></i>Teknoloji</li>
+            <li class="clickable" data-category=""><i class="fa-solid fa-book"></i>Tüm Yazılar</li>
+            <li class="clickable" data-category="muzik"><i class="fa-solid fa-music"></i>Müzik</li>
+            <li class="clickable" data-category="spor"><i class="fa-solid fa-futbol"></i>Spor</li>
+            <li class="clickable" data-category="sinema-dizi"><i class="fa-solid fa-film"></i>Sinema & Dizi</li>
+            <li class="clickable" data-category="kultur"><i class="fa-solid fa-pen-nib"></i>Kültür</li>
+            <li class="clickable" data-category="oyun"><i class="fa-solid fa-gamepad"></i>Oyun</li>
+            <li class="clickable" data-category="teknoloji"><i class="fa-solid fa-computer"></i>Teknoloji</li>
         </ul>
     </aside>
     <section class="content">
@@ -78,14 +78,14 @@
 </body>
 
 <footer>
-    <p>&copy; 2025 Blog Ipsum. Tüm hakları saklıdır.</p>
-    <p>Blog Ipsum by <a href="https://github.com/tunahantarhan" target="_blank">Tunahan Tarhan</a></p>
+    <p>&copy; 2025 Kozmos - Galaksi Rehberiniz. Tüm hakları saklıdır.</p>
+    <p>Kozmos, <a href="https://github.com/tunahantarhan" target="_blank">Tunahan Tarhan</a> tarafından oluşturulmuş ve geliştirilmiştir.</p>
 </footer>
 
+
+<!-- Scripts -->
 <script type="module" src="scripts/posts.js"></script>
 <script src="scripts/global.js"></script>
-
-<!-- Firebase SDK -->
 <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";

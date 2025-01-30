@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/global.css">
 
-    <!-- font : Yeseva One -->
+    <!-- font : Lato -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Yeseva+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <!-- ----------------- -->
 
     <script src="https://kit.fontawesome.com/8e198f5d67.js" crossorigin="anonymous"></script>
@@ -19,7 +19,7 @@
     <header id="contactBar">
         <div id="mailSection">
             <img src="img/icons8-@.svg" alt="mail-icon">
-            <p style="font-size: 14px"><b>loremipsum@gmail.com</b></p>
+            <p style="font-size: 14px"><b>kozmosrehberiniz@gmail.com</b></p>
         </div>
         <div id="socialMediaNavs">
             <img class="socialMediaNavLogos" id="twitterLogo" src="img/icons8-twitter-bird.svg" alt="twitter-icon" onclick="goToTwitterPage()">
@@ -38,13 +38,13 @@
             <div class="close-button clickable" onclick="toggleNav()">
                 <i class="fa-solid fa-xmark"></i>
             </div>
-            <a class="strongtexts clickable" href="posts.html"><i class="fa-solid fa-book"></i>Tüm Yazılar</a>
-            <a class="strongtexts clickable" href="posts.html?category=muzik"><i class="fa-solid fa-music"></i>Müzik</a>
-            <a class="strongtexts clickable" href="posts.html?category=spor"><i class="fa-regular fa-futbol"></i>Spor</a>
-            <a class="strongtexts clickable" href="posts.html?category=sinema-dizi"><i class="fa-regular fa-film"></i>Sinema & Dizi</a>
-            <a class="strongtexts clickable" href="posts.html?category=kultur"><i class="fa-solid fa-pen-nib"></i>Kültür</a>
-            <a class="strongtexts clickable" href="posts.html?category=oyun"><i class="fa-solid fa-gamepad"></i>Oyun</a>
-            <a class="strongtexts clickable" href="posts.html?category=teknoloji"><i class="fa-solid fa-computer"></i>Teknoloji</a>
+            <a class="clickable" href="posts.html"><i class="fa-solid fa-book"></i>Tüm Yazılar</a>
+            <a class="clickable" href="posts.html?category=muzik"><i class="fa-solid fa-music"></i>Müzik</a>
+            <a class="clickable" href="posts.html?category=spor"><i class="fa-regular fa-futbol"></i>Spor</a>
+            <a class="clickable" href="posts.html?category=sinema-dizi"><i class="fa-regular fa-film"></i>Sinema & Dizi</a>
+            <a class="clickable" href="posts.html?category=kultur"><i class="fa-solid fa-pen-nib"></i>Kültür</a>
+            <a class="clickable" href="posts.html?category=oyun"><i class="fa-solid fa-gamepad"></i>Oyun</a>
+            <a class="clickable" href="posts.html?category=teknoloji"><i class="fa-solid fa-computer"></i>Teknoloji</a>
         </div>
     </nav>
 
@@ -52,8 +52,8 @@
 
     <main>
 
-        <h1 id="welcome-heading" class="strongtexts">Merhabalar!</h1>
-        <p id="welcome-text"><em><span id="magZeppelinText">Blog Ipsum</span>'a hoşgeldiniz! Merak ettiğiniz spesifik bir başlık var mıdır?</em></p>
+        <h1 id="welcome-heading">Merhabalar!</h1>
+        <p id="welcome-text"><span id="magZeppelinText">Kozmos</span>'a hoşgeldiniz! Merak ettiğiniz spesifik bir başlık var mıdır?</p>
 
         <section id="searchDiv">
             <form>
@@ -67,69 +67,69 @@
 
         <section id="categories">
             <div class="category" id="tum-yazilar">
-                <h2 class="strongtexts"><i class="fa-solid fa-clock"></i>En Son Paylaşımlar</h2>
+                <h2><i class="fa-solid fa-clock"></i>En Son Paylaşımlar</h2>
                 <div class="slider" id="slider-tum-yazilar">
-                    <!-- yazı kartları dinamik olarak yüklenecek -->
+                    <p>Henüz bu kategoride paylaşılmış bir gönderi bulunmamakta.</p>
                 </div>
             </div>
 
             <div class="category" id="muzik">
-                <h2 class="strongtexts"><i class="fa-solid fa-music"></i>Müzik</h2>
+                <h2><i class="fa-solid fa-music"></i>Müzik</h2>
                 <div class="slider" id="slider-muzik">
-                    <!-- yazı kartları dinamik olarak yüklenecek -->
+                    <p>Henüz bu kategoride paylaşılmış bir gönderi bulunmamakta.</p>
                 </div>
-                <a class="btn clickable strongtexts" href="posts.html?category=muzik" target="_blank"><i class="fa-regular fa-eye"></i>Tümünü Gör</a>
+                <a class="btn clickable" href="posts.html?category=muzik" target="_blank"><i class="fa-regular fa-eye"></i>Tümünü Gör</a>
             </div>
 
 
             <div class="category" id="spor">
-                <h2 class="strongtexts"><i class="fa-solid fa-futbol"></i>Spor</h2>
+                <h2><i class="fa-solid fa-futbol"></i>Spor</h2>
                 <div class="slider" id="slider-spor">
-                    <!-- yazı kartları dinamik olarak yüklenecek -->
+                    <p>Henüz bu kategoride paylaşılmış bir gönderi bulunmamakta.</p>
                 </div>
-                <a class="btn clickable strongtexts" href="posts.html?category=spor" target="_blank"><i class="fa-regular fa-eye"></i>Tümünü Gör</a>
+                <a class="btn clickable" href="posts.html?category=spor" target="_blank"><i class="fa-regular fa-eye"></i>Tümünü Gör</a>
             </div>
 
             <div class="category" id="sinema">
-                <h2 class="strongtexts"><i class="fa-regular fa-film"></i>Sinema & Dizi</h2>
+                <h2><i class="fa-regular fa-film"></i>Sinema & Dizi</h2>
                 <div class="slider" id="slider-sinema-dizi">
-                    <!-- yazı kartları dinamik olarak yüklenecek -->
+                    <p>Henüz bu kategoride paylaşılmış bir gönderi bulunmamakta.</p>
                 </div>
-                <a class="btn clickable strongtexts" href="posts.html?category=sinema-dizi" target="_blank"><i class="fa-regular fa-eye"></i>Tümünü Gör</a>
+                <a class="btn clickable" href="posts.html?category=sinema-dizi" target="_blank"><i class="fa-regular fa-eye"></i>Tümünü Gör</a>
             </div>
 
             <div class="category" id="kultur">
-                <h2 class="strongtexts"><i class="fa-regular fa-pen-nib"></i>Kültür</h2>
+                <h2><i class="fa-regular fa-pen-nib"></i>Kültür</h2>
                 <div class="slider" id="slider-kultur">
-                    <!-- yazı kartları dinamik olarak yüklenecek -->
+                    <p>Henüz bu kategoride paylaşılmış bir gönderi bulunmamakta.</p>
                 </div>
-                <a class="btn clickable strongtexts" href="posts.html?category=kultur" target="_blank"><i class="fa-regular fa-eye"></i>Tümünü Gör</a>
+                <a class="btn clickable" href="posts.html?category=kultur" target="_blank"><i class="fa-regular fa-eye"></i>Tümünü Gör</a>
             </div>
 
             <div class="category" id="oyun">
-                <h2 class="strongtexts"><i class="fa-regular fa-gamepad"></i>Oyun</h2>
+                <h2><i class="fa-regular fa-gamepad"></i>Oyun</h2>
                 <div class="slider" id="slider-oyun">
-                    <!-- yazı kartları dinamik olarak yüklenecek -->
+                    <p>Henüz bu kategoride paylaşılmış bir gönderi bulunmamakta.</p>
                 </div>
-                <a class="btn clickable strongtexts" href="posts.html?category=oyun" target="_blank"><i class="fa-regular fa-eye"></i>Tümünü Gör</a>
+                <a class="btn clickable" href="posts.html?category=oyun" target="_blank"><i class="fa-regular fa-eye"></i>Tümünü Gör</a>
             </div>
             <div class="category" id="teknoloji">
-                <h2 class="strongtexts"><i class="fa-regular fa-computer"></i>Teknoloji</h2>
+                <h2><i class="fa-regular fa-computer"></i>Teknoloji</h2>
                 <div class="slider" id="slider-teknoloji">
-                    <!-- yazı kartları dinamik olarak yüklenecek -->
+                    <p>Henüz bu kategoride paylaşılmış bir gönderi bulunmamakta.</p>
                 </div>
-                <a class="btn clickable strongtexts" href="posts.html?category=teknoloji" target="_blank"><i class="fa-regular fa-eye"></i>Tümünü Gör</a>
+                <a class="btn clickable" href="posts.html?category=teknoloji" target="_blank"><i class="fa-regular fa-eye"></i>Tümünü Gör</a>
             </div>
         </section>
     </main>
 </body>
 
 <footer>
-    <p>&copy; 2025 Blog Ipsum. Tüm hakları saklıdır.</p>
-    <p>Blog Ipsum by <a href="https://github.com/tunahantarhan" target="_blank">Tunahan Tarhan</a></p>
+    <p>&copy; 2025 Kozmos - Galaksi Rehberiniz. Tüm hakları saklıdır.</p>
+    <p>Kozmos, <a href="https://github.com/tunahantarhan" target="_blank">Tunahan Tarhan</a> tarafından oluşturulmuş ve geliştirilmiştir.</p>
 </footer>
 
-<!-- Firebase SDK -->
+<!-- Scripts -->
 <script type="module" src="scripts/firebase-config.js"></script>
 <script type="module" src="scripts/index.js"></script>
 <script src="scripts/global.js"></script>
