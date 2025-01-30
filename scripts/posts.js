@@ -32,18 +32,33 @@ function loadPosts(category = null) {
 
     onValue(postsRef, (snapshot) => {
         const postContainer = document.getElementById("post-container");
-        postContainer.innerHTML = ""; // Önceki içerikleri temizle
+        postContainer.innerHTML = "";
 
         if (snapshot.exists()) {
             let hasPosts = false;
+            let postsArray = [];
+
             snapshot.forEach((childSnapshot) => {
                 const postData = childSnapshot.val();
+                const timestamp = postData.timestamp || childSnapshot.key;
+                const postDate = new Date(parseInt(timestamp));
+                const formattedDate = postDate.toLocaleDateString("tr-TR", {
+                    day: "2-digit",
+                    month: "long",
+                    year: "numeric"
+                });
 
                 if (!category || postData.category === category) {
-                    const postElement = createPostElement(postData);
-                    postContainer.appendChild(postElement);
+                    postsArray.push({ postData, formattedDate, timestamp });
                     hasPosts = true;
                 }
+            });
+
+            postsArray.sort((a, b) => parseInt(b.timestamp) - parseInt(a.timestamp));
+
+            postsArray.forEach(({ postData, formattedDate }) => {
+                const postElement = createPostElement(postData, formattedDate);
+                postContainer.appendChild(postElement);
             });
 
             if (!hasPosts) {
@@ -57,7 +72,7 @@ function loadPosts(category = null) {
     });
 }
 
-function createPostElement(postData) {
+function createPostElement(postData, formattedDate) {
     const postDiv = document.createElement("div");
     postDiv.className = "post";
     postDiv.id = "post-card";
@@ -65,11 +80,12 @@ function createPostElement(postData) {
     postDiv.innerHTML = `
         <h2>${postData.title}</h2>
         <img src="${postData.imageUrl}" alt="${postData.title}" />
+        <div class="date-and-time">
+            <h5 class="post-card-date"><i class="fa-solid fa-calendar"></i>${formattedDate}</h5>
+            <h5 class="post-card-readingTime"><i class="fa-solid fa-glasses"></i>${postData.readingTime} dk.</h5>
+        </div>
         <p>${postData.description}</p>
-        
-        <a class="read-more clickable strongtexts" href="text-detail.html?title=${postData.title}">
-            <i class="fa-regular fa-eye"></i> Devamını Oku
-        </a>
+        <a class="read-more strongtexts" href="text-detail.html?title=${postData.title}"><i class="fa-regular fa-eye"></i> Devamını Oku</a>
     `;
 
     return postDiv;
@@ -83,12 +99,10 @@ if (selectedCategory) {
 
 document.getElementById("grid-view-btn").addEventListener("click", () => {
     document.getElementById("post-container").style.display = "grid";
-    document.getElementById("post-card").style.marginBottom = "0";
 })
 
 document.getElementById("list-view-btn").addEventListener("click", () => {
     document.getElementById("post-container").style.display = "block";
-    document.getElementById("post-card").style.marginBottom = "2.5rem";
 })
 
 

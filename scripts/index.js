@@ -4,7 +4,8 @@ import {
     ref,
     onValue,
     orderByKey,
-    limitToLast, query
+    limitToLast,
+    query
 } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
 
 const firebaseConfig = {
@@ -20,7 +21,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-// slider doldurma
+//category'ye sahip olanlar için category içi slider doldurma
 function populateSliders() {
     const postsRef = ref(db, 'posts');
 
@@ -42,6 +43,7 @@ function populateSliders() {
                 categories[postData.category] = [];
             }
             categories[postData.category].push({
+                timestamp: parseInt(timestamp),
                 title: postData.title,
                 image: postData.imageUrl,
                 description: postData.description.substring(0, 100) + '...',
@@ -51,10 +53,14 @@ function populateSliders() {
         });
 
         for (const category in categories) {
+            //en yeni 3 post card filtreleme ve sıralama
+            categories[category].sort((a, b) => b.timestamp - a.timestamp);
+            const latestPosts = categories[category].slice(0, 3);
+
             const slider = document.getElementById(`slider-${category}`);
             if (slider) {
                 slider.innerHTML = "";
-                categories[category].forEach((post) => {
+                latestPosts.forEach((post) => {
                     const card = document.createElement("div");
                     card.className = "post-card";
                     card.innerHTML = `
@@ -79,6 +85,7 @@ function populateSliders() {
     });
 }
 
+//en son paylaşımlar kısmı için slider doldurma
 function populateLatestPosts() {
     const latestPostsRef = query(ref(db, 'posts'), orderByKey(), limitToLast(3));
 
@@ -95,7 +102,7 @@ function populateLatestPosts() {
                 year: "numeric"
             });
 
-            posts.unshift({ //yenileri başa ekleme işlemi
+            posts.unshift({ //sıralama
                 title: postData.title,
                 image: postData.imageUrl,
                 description: postData.description.substring(0, 100) + '...',
@@ -133,5 +140,5 @@ function populateLatestPosts() {
 
 document.addEventListener("DOMContentLoaded", () => {
     populateLatestPosts();
-    populateSliders()
+    populateSliders();
 });

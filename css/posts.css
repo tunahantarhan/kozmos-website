@@ -43,6 +43,7 @@ main {
     position: sticky;
     top: 20px;
     height: 100vh;
+    margin-bottom: 2.5rem;
 }
 
 .filter-bar ul {
@@ -93,11 +94,12 @@ main {
     overflow: hidden;
     cursor: pointer;
     transition: all 0.2s ease;
+    margin-bottom: 2.2rem;
 }
 
 .post:hover {
     scale: 1.02;
-    box-shadow: 16px 24px #423651;
+    box-shadow: 12px 16px #423651;
 }
 
 .post img {
@@ -108,33 +110,53 @@ main {
 
 .post h2 {
     margin: 0;
-    padding: 0.5rem;
+    padding: 1rem;
     font-size: 1.3rem;
     background: #423651;
+    border-bottom: 3px solid slategray;
 }
 
 .post p {
-    padding: 0.5rem;
     color: white;
     font-size: 1.1rem;
+    padding: 1rem;
+}
+
+.post .date-and-time{
+    display: flex;
+    justify-content: left;
+    padding-left: 1rem;
+    gap: 20px;
+    align-items: center;
+    font-size: 20px;
+    margin-top: -3px;
+    background: #423651;
+    border-bottom: 3px solid slategray;
+    border-top: 3px solid slategray;
+}
+
+.post .date-and-time i{
+    font-size: 17px;
+    padding: 0 8px 0 0;
 }
 
 .post .read-more {
     display: inline-block;
-    margin: 0.5rem;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
     background: none;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
     text-align: center;
     border: 3px solid slategray;
     font-size: 15px;
     transition: all 0.2s ease;
+    margin: 1rem;
 }
 
 .post .read-more:hover{
-    margin-left: 1vw;
+    scale: 1.02;
+    background: #423651;
+    box-shadow: 4px 6px #423651;
 }
 
 .post .read-more i{

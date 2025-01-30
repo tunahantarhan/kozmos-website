@@ -73,12 +73,12 @@ main #searchDiv form{
 }
 
 .category h2 {
-    font-size: 2.5vw;
+    font-size: 2vw;
     margin-bottom: 15px;
 }
 
 .category h2 i{
-    font-size: 2vw;
+    font-size: 1.5vw;
     margin-right: 1vw;
 }
 
@@ -180,35 +180,18 @@ main #searchDiv form{
     }
     .category h2 {
         font-size: 5vw;
-        margin-bottom: 15px;
     }
     .category h2 i{
         font-size: 4vw;
         margin-right: 1vw;
     }
 
-    /*.slider{
-        display: flex;
-        flex-direction: column;
-        overflow: scroll;
+}
+@media (max-width: 710px){
+    .slider{
+        display: block;
+        margin: 0;
     }
-
-    .category{
-        position: relative;
-        height: 50vh;
-        overflow: scroll;
-    }
-
-    .slider .post-card{
-        width: 95%;
-        margin-top: 5px;
-    }
-    
-    .btn{
-        position: relative;
-        bottom: 0;
-    }*/
-
 }
 /********************/
 
