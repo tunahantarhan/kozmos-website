@@ -41,6 +41,7 @@ function loadPosts(category = null) {
             snapshot.forEach((childSnapshot) => {
                 const postData = childSnapshot.val();
                 const timestamp = postData.timestamp || childSnapshot.key;
+                postData.id = childSnapshot.key;
                 const postDate = new Date(parseInt(timestamp));
                 const formattedDate = postDate.toLocaleDateString("tr-TR", {
                     day: "2-digit",
@@ -85,7 +86,7 @@ function createPostElement(postData, formattedDate) {
             <h5 class="post-card-readingTime"><i class="fa-solid fa-glasses"></i>${postData.readingTime} dk.</h5>
         </div>
         <p>${postData.description}</p>
-        <a class="read-more strongtexts" href="text-detail.html?title=${postData.title}"><i class="fa-regular fa-eye"></i> Devamını Oku</a>
+        <a class="read-more clickable strongtexts" href="post-detail.html?title=${encodeURIComponent(postData.title)}&id=${postData.id}"><i class="fa-regular fa-eye"></i> Devamını Oku</a>
     `;
 
     return postDiv;

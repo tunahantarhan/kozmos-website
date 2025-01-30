@@ -22,7 +22,7 @@ body{
 .strongtexts{
     font-family: "Yeseva One", serif;
 }
-.clickable:active, .clickable:visited{
+.clickable:visited{
     color: white;
 }
 .clickable:hover{
@@ -30,7 +30,7 @@ body{
     color: #f39e52;
     background-color: #404367;
     scale: 1.1;
-    transition: all 0.2s ease;
+    transition: all 0.2s linear !important;
 }
 i{
     font-size: 25px;
@@ -84,7 +84,7 @@ p{
     height: 30px;
     width: 30px;
     border-radius: 7px;
-    transition: all 0.2s ease;
+    transition: all 0.2s linear !important;
 }
 #contactBar #socialMediaNavs #facebookLogo:hover, #twitterLogo:hover, #instagramLogo:hover {
     height: 35px;
@@ -112,7 +112,7 @@ p{
 }
 #headerBar #logo img{
     width: 200px;
-    transition: all 0.2s ease;
+    transition: all 0.2s linear !important;
 }
 #headerBar #logo img:hover{
     width: 250px;
@@ -142,6 +142,7 @@ p{
     display: flex;
     align-items: center;
     text-decoration: none;
+    color: white;
 }
 #headerBar #navs a i{
     position: relative;
@@ -152,6 +153,10 @@ p{
 #headerBar #navs a:link, a:visited{
     color: white;
     text-decoration: none;
+}
+
+#headerBar #navs a:hover{
+    color: #f39e52;
 }
 /********************/
 
@@ -192,6 +197,13 @@ footer p, a{
         justify-content: flex-start;
         text-align: center;
         align-items: center;
+        position: sticky !important;
+        top: 0;
+        z-index: 10;
+        background: #24253a;
+        border-bottom: 1px solid slategray;
+        padding: 2% 4%;
+        margin: 0;
     }
 
     #headerBar #logo img {
@@ -202,12 +214,16 @@ footer p, a{
         width: 270px;
     }
 
+    .hr{
+        display: none;
+    }
+
     #headerBar .nav-toggle {
         display: flex;
         position: absolute;
         height: 70%;
-        width: 10%;
-        right: 0;
+        right: 4%;
+        padding: 0;
         border: 1px solid slategrey;
         border-radius: 10px;
         color: white;

@@ -101,7 +101,7 @@ main #searchDiv form{
     margin-top: 5vh;
     position: relative;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.2s linear !important;
 }
 
 .slider .post-card:hover {

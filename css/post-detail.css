@@ -1,0 +1,61 @@
+html, body{
+    margin: 6% 4% 0 4%;
+}
+
+#post-title{
+    font-size: 50px;
+    margin: 0 0 20px 0;
+}
+
+.post-info-container{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-size: 15px;
+    margin-left: 0;
+}
+
+.info-item{
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+}
+
+.info-item i{
+    padding: 0 10px 0 0;
+}
+
+#post-description{
+    font-size: 20px;
+}
+
+#post-image{
+    height: 20%;
+    width: 70%;
+}
+
+#post-text{
+    margin: 20px 0 20px 0;
+    font-size: 20px;
+}
+
+.post-sources-container{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.post-sources-container i{
+    padding: 0 5px 0 0;
+    font-size: 15px;
+}
+.post-sources-container p{
+    font-size: 15px;
+}
+
+@media (max-width: 1160px){
+    #post-image{
+        width: 100%;
+        height: 50vw;
+    }
+}
