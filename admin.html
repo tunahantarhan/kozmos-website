@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="css/admin.css">
   <title>Admin | Kozmos - Galaksi Rehberiniz</title>
 
+  <script src="https://cdn.tiny.cloud/1/necayx4s160ukmfezqkwmzoifx2c23nv38357zfka8uulb5n/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
   <script src="https://kit.fontawesome.com/8e198f5d67.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -28,11 +29,15 @@
     <button id="login-btn">Giriş Yap</button>
   </div>
 
-  <div id="upload-form" class="hidden">
+  <div id="upload-form" class="hidden" style="border: 1px solid black; padding: 10px">
     <h2>Yeni Gönderi Paylaş</h2>
     <div class="form-group">
       <label for="post-title">Başlık:</label>
       <input type="text" id="post-title" placeholder="Gönderi Başlığı">
+    </div>
+    <div class="form-group">
+      <label for="post-writer">Yazar:</label>
+      <input type="text" id="post-writer" placeholder="Gönderi Yazarı">
     </div>
     <div class="form-group">
       <label for="post-duration">Okuma Süresi:</label>
@@ -65,10 +70,10 @@
       <label for="post-referances">Kaynaklar (Zorunlu Değil):</label>
       <input type="text" id="post-referances" placeholder="Kaynaklarınız">
     </div>
-    <button id="submit-post">Paylaş</button>
+    <button id="submit-post"><b>PAYLAŞ</b></button>
   </div>
 
-  <div id="all-posts" class="hidden">
+  <div id="all-posts" class="hidden" style="border: 1px solid black; margin-top: 50px; padding: 10px">
     <h2>Tüm Yazılar</h2>
     <div id="posts-list">
       <!-- dinamik olarak buraya gelecek yazılar -->

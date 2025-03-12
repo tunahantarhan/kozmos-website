@@ -36,10 +36,11 @@ if (postId) {
                 month: "long",
                 year: "numeric"
             });
-
+            
             document.getElementById("post-title").innerText = postData.title;
             document.getElementById("post-category").innerHTML = capitalizeLetters(postData.category);
             document.getElementById("post-date").innerHTML = formattedDate;
+            document.getElementById("post-writer").innerHTML = postData.writer;
             document.getElementById("post-duration").innerHTML = `${postData.readingTime} dk.`;
             //document.getElementById("post-view-count").innerHTML = `${postData.viewCount} görüntüleme`;
             document.getElementById("post-description").innerHTML = postData.description;
@@ -61,5 +62,5 @@ function capitalizeLetters(str) {
     for (let i = 0; i < splitStr.length; i++) {
         splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
     }
-    return splitStr.join(' ');
+    return splitStr.join(' & ');
 }
