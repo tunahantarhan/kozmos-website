@@ -1,5 +1,10 @@
 html, body{
-    margin: 6% 4% 0 4%;
+    margin: 0 auto;
+}
+
+main{
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 #post-title{
@@ -12,6 +17,7 @@ html, body{
     gap: 20px;
     align-items: center;
     font-size: 15px;
+    flex-wrap: wrap;
     margin-left: 0;
 }
 
@@ -29,14 +35,18 @@ html, body{
     font-size: 20px;
 }
 
-#post-image{
-    height: 20%;
-    width: 70%;
+p > img{
+    height: 25vw;
+    width: 40vw;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 #post-text{
-    margin: 20px 0 20px 0;
     font-size: 20px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .post-sources-container{
@@ -54,8 +64,21 @@ html, body{
 }
 
 @media (max-width: 1160px){
-    #post-image{
-        width: 100%;
+    p > img{
         height: 50vw;
+        width: 70vw;
+    }
+}
+
+@media (max-width: 500px) {
+    p > img{
+        height: 50vw;
+        width: 90%;
+    }
+
+    .post-info-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
     }
 }

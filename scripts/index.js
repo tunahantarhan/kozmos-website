@@ -21,7 +21,54 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-// category'ye sahip olanlar için category içi slider doldurma
+const searchInput = document.getElementById("search");
+const searchResultsContainer = document.getElementById("searchResults");
+
+searchInput.addEventListener("input", () => {
+    const query = searchInput.value.trim().toLowerCase();
+    searchResultsContainer.innerHTML = "";
+
+    if (query.length < 2) return;
+
+    const postsRef = ref(db, "posts");
+    onValue(postsRef, (snapshot) => {
+
+        const results = [];
+
+        snapshot.forEach((childSnapshot) => {
+            const postData = childSnapshot.val();
+            const title = (postData.title || "").toLowerCase();
+            const description = (postData.description || "").toLowerCase();
+            const category = (postData.category || "").toLowerCase();
+
+            if (title.includes(query) || description.includes(query) || category.includes(query)) {
+                results.push({ id: childSnapshot.key, ...postData });
+            }
+        });
+
+        if (results.length === 0) {
+            searchResultsContainer.innerHTML = "<p>Sonuç bulunamadı.</p>";
+            return;
+        }
+
+        results.forEach((post) => {
+            const card = document.createElement("div");
+            card.id = "search-card";
+            card.innerHTML = `
+                <img src="${post.imageUrl}" alt="${post.title}">
+                <div>
+                    <h3>${post.title}</h3>
+                    <p>${post.description.substring(0, 70) + '...'}</p>
+                </div>
+            `;
+            card.addEventListener("click", () => {
+                window.location.href = `post-detail.html?title=${encodeURIComponent(post.title)}&id=${post.id}`;
+            });
+            searchResultsContainer.appendChild(card);
+        });
+    }, { onlyOnce: true }); // her inputta sadece bir kere tetiklesin
+});
+
 function populateSliders() {
     const postsRef = ref(db, 'posts');
 

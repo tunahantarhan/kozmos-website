@@ -24,26 +24,23 @@ main {
 
 #view-option-container button {
     background: none;
-    border: 3px solid slategray;
+    border: 2px solid slategray;
     border-radius: 5px;
     transition: all 0.2s linear !important;
 }
 
 #view-option-container button:hover {
-    background-color: #404367;
-    i{
-        color: #f39e52;
-    }
+    background-color: #423651;
 }
 
 .filter-bar {
-    border: 3px solid slategray;
+    border: 2px solid slategray;
     border-radius: 5px;
     background: none;
     position: sticky;
     top: 20px;
     height: 100vh;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.5vh;
 }
 
 .filter-bar ul {
@@ -75,7 +72,7 @@ main {
     width: 100%;
     text-align: left;
     border: 1px solid slategray;
-    border-radius: 3px;
+    border-radius: 2px;
     font-size: 17px;
     font-weight: 900;
     cursor: pointer;
@@ -105,7 +102,8 @@ main {
 }
 
 .post {
-    border: 3px solid slategray;
+    border: 2px solid slategray;
+    border-radius: 5px;
     box-shadow: 8px 12px #423651;
     overflow: hidden;
     cursor: pointer;
@@ -129,7 +127,7 @@ main {
     padding: 1rem;
     font-size: 1.3rem;
     background: #423651;
-    border-bottom: 3px solid slategray;
+    border-bottom: 2px solid slategray;
 }
 
 .post p {
@@ -145,10 +143,10 @@ main {
     gap: 20px;
     align-items: center;
     font-size: 20px;
-    margin-top: -3px;
+    margin-top: -6px;
     background: #423651;
-    border-bottom: 3px solid slategray;
-    border-top: 3px solid slategray;
+    border-bottom: 2px solid slategray;
+    border-top: 2px solid slategray;
 }
 
 .post .date-and-time i{
@@ -163,7 +161,8 @@ main {
     color: white;
     text-decoration: none;
     text-align: center;
-    border: 3px solid slategray;
+    border: 2px solid slategray;
+    border-radius: 5px;
     font-size: 15px;
     transition: all 0.2s linear !important;
     margin: 1rem;
@@ -171,12 +170,8 @@ main {
 
 .post .read-more:hover{
     scale: 1.02;
-    background: #404367 !important;
+    background: none !important;
     box-shadow: 4px 6px #423651;
-    i{
-        color: #f39e52;
-        transition: all 0.2s linear !important;
-    }
 }
 
 .post .read-more i{

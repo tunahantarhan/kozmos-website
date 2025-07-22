@@ -1,6 +1,7 @@
-.lato-bold {
-    font-family: "Lato", serif;
-    font-weight: 700;
+.overpass{
+    font-family: "Overpass", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
     font-style: normal;
 }
 
@@ -8,8 +9,8 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    font-family: "Lato", serif;
-    overflow-x: hidden; /* Yatay taşmaları engelle */
+    font-family: "Overpass", serif;
+    overflow-x: hidden;
 }
 body{
     position: absolute;
@@ -28,9 +29,8 @@ body{
 }
 .clickable:hover{
     cursor: pointer;
-    color: #f39e52;
-    background-color: #404367;
-    scale: 1.1;
+    background-color: #423651;
+    transform: translateY(-3px);
     transition: all 0.2s linear !important;
 }
 i{
@@ -93,8 +93,9 @@ p{
     transition: all 0.2s linear !important;
 }
 #contactBar #socialMediaNavs #facebookLogo:hover, #twitterLogo:hover, #instagramLogo:hover {
-    height: 35px;
-    width: 35px;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
     cursor: pointer;
 }
 #contactBar #socialMediaNavs #twitterLogo:hover{
@@ -121,7 +122,7 @@ p{
     transition: all 0.2s linear !important;
 }
 #headerBar #logo img:hover{
-    width: 250px;
+    transform: translateY(-2.5px);
 }
 #headerBar .nav-toggle{
     display: none;
@@ -162,14 +163,16 @@ p{
 }
 
 #headerBar #navs a:hover{
-    color: #f39e52;
-}
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;}
 /********************/
 
 /* MAIN SECTION */
 #main{
     position: relative;
-    margin: 6% 4% 0 4%;
+    margin: 3% 6% 0 6%;
 }
 /********************/
 
@@ -187,10 +190,16 @@ footer p, a{
     font-size: 15px;
     color: white;
     transition: all 0.2s linear !important;
+    text-decoration: none;
+}
+
+footer a{
+    font-weight: 1000;
 }
 
 footer a:hover{
     color: #f39e52;
+    text-decoration: underline;
 }
 /********************/
 
@@ -200,7 +209,7 @@ footer a:hover{
         margin: 0;
         padding: 0;
         width: 100%;
-        overflow-x: hidden; /* Yatay taşmaları engelle */
+        overflow-x: hidden;
     }
     /* HEADER */
     #headerBar {
@@ -285,12 +294,6 @@ footer a:hover{
         justify-content: center;
         margin: 5px 0;
         font-size: 20px;
-    }
-    /********************/
-
-    /* GENERAL PURPOSE */
-    .clickable:hover {
-        scale: 1.06;
     }
     /********************/
 }
