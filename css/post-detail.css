@@ -25,6 +25,9 @@ main{
     display: flex;
     align-items: center;
     font-size: 13px;
+    border-radius: 10px;
+    padding: 5px;
+    background: #423651;
 }
 
 .info-item i{
@@ -70,15 +73,35 @@ p > img{
     }
 }
 
-@media (max-width: 500px) {
-    p > img{
+@media (max-width: 560px) {
+    p > img {
         height: 50vw;
         width: 90%;
     }
 
     .post-info-container {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
+        width: 100%;
+    }
+
+    .info-item {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        background-color: #423651;
+        padding: 8px 12px;
+        font-size: 12px;
+        width: 80%;
+        height: 40%;
+        min-height: 1px;
+    }
+
+    .info-item i {
+        margin-right: 8px;
+        flex-shrink: 0;
+        font-size: 20px;
     }
 }
+
