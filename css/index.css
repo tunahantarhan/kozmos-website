@@ -3,41 +3,30 @@
 main{
     margin: 0 10% 0 10%;
 }
-#kozmosText{
-    color: #f39e52;
-}
-
-#welcome-text{
-    text-align: center;
-    margin-top: 8vh;
-    font-size: 4vh;
-}
 
 #searchDiv{
     display: block;
 }
 
-#searchDiv form{
+#searchDiv form {
     display: flex;
     position: relative;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    margin-top: 6vh;
-    left: 50%;
-    right: 50%;
+    margin-top: 8vh;
     width: 100%;
-    transform: translate(-50%, -50%);
-    padding: 5px 20px 0 20px;
+    padding: 5px 16px;
+    box-sizing: border-box;
 }
-#searchDiv form input{
+
+#searchDiv form input {
     border: 2px solid slategray;
     border-radius: 20px;
-    position: relative;
-    width: 70vh;
-    font-size: 20px;
-    padding: 5px 15px 5px 15px;
+    width: 90%;
+    font-size: 18px;
+    padding: 10px 15px;
     color: #423651;
+    box-sizing: border-box;
 }
 #searchDiv form input:focus{
     outline: none;
@@ -65,7 +54,7 @@ main{
 
 #search-card {
     display: flex;
-    width: 90%;
+    width: 80%;
     max-width: 800px;
     background-color: #231e2e;
     border: 2px solid slategray;
@@ -83,7 +72,7 @@ main{
 #search-card img {
     width: 180px;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     border-right: 2px solid slategray;
 }
 
@@ -270,6 +259,20 @@ main{
 }
 
 @media (max-width: 600px) {
+    #search-card {
+        width: 70%;
+        height: 15vw;
+    }
+    #search-card h3{
+        font-size: 1rem;
+    }
+    #search-card p{
+        display: none;
+    }
+    #search-card img{
+        object-fit: cover;
+        width: 20vw;
+    }
     .slider .post-card {
         height: auto;
     }
