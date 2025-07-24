@@ -3,6 +3,8 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: white !important;
+    color: black !important;
 }
 header {
     background-color: #423651;
@@ -36,23 +38,13 @@ header button {
 .form-group label {
     display: block;
     margin-bottom: 5px;
+    font-size: 14px;
 }
 .form-group input, .form-group textarea {
     width: 95%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-}
-.form-group button {
-    padding: 10px 15px;
-    border: none;
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-}
-.form-group button:hover {
-    background-color: #45a049;
 }
 
 #post-category{
